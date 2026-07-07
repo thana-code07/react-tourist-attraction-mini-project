@@ -27,14 +27,14 @@ function App() {
   }, [searchTerm]);
 
   return (
-    <div className="App">
+    <div className="App max-w-screen">
       <h1 className="text-3xl font-bold text-center text-blue-500 mt-2 p-3">
         เที่ยวไหนดี
       </h1>
       <div className="flex justify-center px-4 mt-6">
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
-      <div className="px-4 mt-6">
+      <div className="px-4 mt-6 flex flex-col items-center w-full">
         {travelInfo.map((travel) => (
           <TravelCard key={travel.eid} travel={travel} />
         ))}
