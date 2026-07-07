@@ -15,6 +15,7 @@ const Search = ({ searchTerm, setSearchTerm }) => {
           type="search"
           placeholder="ค้นหาสถานที่ท่องเที่ยว..."
           className="pl-9 border-border bg-white shadow-md hover:border-2 focus-visible:ring-2 focus-visible:ring-blue-500/30"
+          value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>

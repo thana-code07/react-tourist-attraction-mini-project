@@ -32,6 +32,15 @@ function App() {
     }
   };
 
+  const handleTagClick = (tag) => {
+    const keywords = searchTerm.trim().split(/\s+/).filter(Boolean);
+    if (keywords.includes(tag)) {
+      return;
+    } else {
+      setSearchTerm(keywords.length > 0 ? `${keywords.join(" ")} ${tag}` : tag);
+    }
+  };
+
   useEffect(() => {
     getTravelData(debouncedSearchTerm);
   }, [debouncedSearchTerm]);
@@ -51,7 +60,11 @@ function App() {
 
         <div className="flex flex-col gap-8 py-6">
           {travelInfo.map((travel) => (
-            <TravelCard key={travel.eid} travel={travel} />
+            <TravelCard
+              key={travel.eid}
+              travel={travel}
+              onTagClick={handleTagClick}
+            />
           ))}
         </div>
       </div>
