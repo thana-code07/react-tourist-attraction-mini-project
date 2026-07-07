@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 const Search = ({ searchTerm, setSearchTerm }) => {
   return (
     <div className="w-full max-w-2xl space-y-2">
-      <Label htmlFor="search-input" className="text-blue-500 font-semibold">
+      <Label htmlFor="search-input" className="text-accent-blue font-semibold">
         ค้นหาที่เที่ยว
       </Label>
       <div className="relative">
