@@ -1,6 +1,4 @@
-import "./App.css";
-
-import Search from "@/components/Search";
+import Search from "./components/Search";
 
 import { useEffect, useState } from "react";
 
@@ -19,12 +17,8 @@ function App() {
   const getTravelData = async (searchTerm) => {
     try {
       const response = await axios.get(
-        searchTerm
-          ? `http://localhost:4001/trips?keywords=${searchTerm}`
-          : `http://localhost:4001/trips?keywords=`,
+        `http://localhost:4001/trips?keywords=${searchTerm}`,
       );
-
-      console.log(response.data.data);
 
       setTravelInfo(response.data.data);
     } catch (error) {
@@ -46,7 +40,7 @@ function App() {
   }, [debouncedSearchTerm]);
 
   return (
-    <div className="App min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <div className="max-w-5xl mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-accent-blue mt-6 mb-4">
           เที่ยวไหนดี

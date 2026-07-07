@@ -46,7 +46,7 @@ const TravelCard = ({ travel, onTagClick }) => {
 
         <p className="text-[#777] text-sm mt-2">
           หมวด{" "}
-          {tags.slice(0, -1).map((tag, index) => (
+          {tags.slice(0, -1).map((tag) => (
             <button
               key={tag}
               type="button"
